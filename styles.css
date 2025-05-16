@@ -3,17 +3,16 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #E8E4E4;
+    background-color: #e8e4e4;
 }
-
 
 .clock_back {
     /* 60% of whole page screen size */
     width: 60%;
-    
-     /* 40% of whole page screen size */
+
+    /* 40% of whole page screen size */
     height: 40%;
-   
+
     /* Give some space at the top */
     margin-top: 40px;
 
@@ -22,7 +21,7 @@ body {
     margin-left: auto;
 
     /* Drop shadow */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: -10px -10px 20px 4px rgba(0, 0, 0, 0.25);
 
     /* Center children vertically and horizontally */
     display: flex;
@@ -33,24 +32,26 @@ body {
 }
 
 .clocks {
-     /* 80% of the clock's backboard (clock_back) */
+    /* 80% of the clock's backboard (clock_back) */
     width: 80%;
 
-     /* 80% of the clocks backboard (clock_back) */
+    /* 80% of the clocks backboard (clock_back) */
     height: 80%;
 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
 }
 
-.clock_columns {
+.clock_column {
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.clock_one, .clock_two, .clock_three {
+.clock_one,
+.clock_two,
+.clock_three {
     /* clock Dimensions */
     width: 80px;
     height: 80px;
@@ -61,7 +62,7 @@ body {
     margin: auto;
 
     /* Inner Shadow */
-    box-shadow: inset -4px 4px 8px rgba(0, 0, 0, 0.25);
+    box-shadow: inset -10px 10px 8px rgba(0, 0, 0, 0.25);
 
     position: relative;
     display: flex;
@@ -74,7 +75,7 @@ body {
     transform-origin: 5px center;
     background-color: black;
     position: absolute;
-    
+
     border-radius: 20px 0 0 20px;
     left: calc(50% - 5px);
 
@@ -87,10 +88,9 @@ body {
     transform-origin: 5px center;
     background-color: black;
     position: absolute;
-    
+
     border-radius: 20px 0 0 20px;
     left: calc(50% - 5px);
 
     /* transform: rotate(135deg); */
 }
-
