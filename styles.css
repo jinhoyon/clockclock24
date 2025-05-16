@@ -50,12 +50,12 @@ body {
     align-items: center;
 }
 
-.circle_one, .circle_two, .circle_three {
-    /* Circle Dimensions */
+.clock_one, .clock_two, .clock_three {
+    /* clock Dimensions */
     width: 80px;
     height: 80px;
 
-    /* Circle shape */
+    /* clock shape */
     border-radius: 50%;
 
     margin: auto;
