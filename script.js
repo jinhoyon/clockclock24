@@ -2,8 +2,7 @@
     // Current Date
     const now = new Date();
 
-    // const hoursNow = now.getHours() % 12 || 12;
-    const hoursNow = 9;
+    const hoursNow = now.getHours() % 12 || 12;
     const minutesNow = now.getMinutes();
 
     // Columns
@@ -24,6 +23,9 @@
         clockOne = column.querySelector(".clock_one");
         clockTwo = column.querySelector(".clock_two");
         clockThree = column.querySelector(".clock_three");
+        clockFour = column.querySelector(".clock_four");
+        clockFive = column.querySelector(".clock_five");
+        clockSix = column.querySelector(".clock_six");
     }
 
     // helper to set a clock's hands
@@ -34,175 +36,165 @@
         minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
     }
 
-    function setIdle() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 135, 135);
-        setClockHands(clockTwo, 135, 135);
-        setClockHands(clockThree, 135, 135);
-    }
-
-    function setZero() {
-        // Column 1
-        setClocks(columnOne);
+    function setZero(column) {
+        setClocks(column);
         setClockHands(clockOne, 90, 0);
-        setClockHands(clockTwo, 90, 270);
-        setClockHands(clockThree, 270, 0);
+        setClockHands(clockThree, 90, 270);
+        setClockHands(clockFive, 270, 0);
 
-        // Column 2
-        setClocks(columnTwo);
-        setClockHands(clockOne, 90, 180);
-        setClockHands(clockTwo, 90, 270);
-        setClockHands(clockThree, 270, 180);
-    }
-
-    function setOne() {
-        setIdle();
-        setClocks(columnFour);
-        setClockHands(clockOne, 90, 90);
-        setClockHands(clockTwo, 90, 270);
-        setClockHands(clockThree, 270, 270);
-    }
-
-    function setTwo() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 0, 0);
-        setClockHands(clockTwo, 90, 0);
-        setClockHands(clockThree, 270, 0);
-
-        setClocks(columnFour);
-        setClockHands(clockOne, 180, 90);
-        setClockHands(clockTwo, 180, 270);
-        setClockHands(clockThree, 180, 180);
-    }
-
-    function setThree() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 0, 0);
-        setClockHands(clockTwo, 0, 0);
-        setClockHands(clockThree, 0, 0);
-
-        setClocks(columnFour);
-        setClockHands(clockOne, 180, 90);
-        setClockHands(clockTwo, 180, 270);
-        setClockHands(clockThree, 180, 270);
-    }
-
-    function setFour() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 90, 90);
-        setClockHands(clockTwo, 270, 0);
-        setClockHands(clockThree, 135, 135);
-
-        setClocks(columnFour);
-        setClockHands(clockOne, 90, 90);
-        setClockHands(clockTwo, 90, 270);
-        setClockHands(clockThree, 270, 270);
-    }
-
-    function setFive() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 0, 90);
-        setClockHands(clockTwo, 270, 0);
-        setClockHands(clockThree, 0, 0);
-
-        setClocks(columnFour);
-        setClockHands(clockOne, 180, 180);
         setClockHands(clockTwo, 90, 180);
-        setClockHands(clockThree, 180, 270);
+        setClockHands(clockFour, 90, 270);
+        setClockHands(clockSix, 270, 180);
     }
 
-    function setSix() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 90, 0);
-        setClockHands(clockTwo, 270, 90);
-        setClockHands(clockThree, 270, 0);
-
-        setClocks(columnFour);
-        setClockHands(clockOne, 180, 180);
-        setClockHands(clockTwo, 180, 90);
-        setClockHands(clockThree, 270, 180);
-    }
-    function setSeven() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 0, 0);
-        setClockHands(clockTwo, 135, 135);
+    function setOne(column) {
+        setClocks(column);
+        setClockHands(clockOne, 135, 135);
         setClockHands(clockThree, 135, 135);
-
-        setClocks(columnFour);
-        setClockHands(clockOne, 180, 90);
-        setClockHands(clockTwo, 90, 270);
-        setClockHands(clockThree, 270, 270);
+        setClockHands(clockFive, 135, 135);
+        
+        setClockHands(clockTwo, 90, 90);
+        setClockHands(clockFour, 90, 270);
+        setClockHands(clockSix, 270, 270);
     }
 
-    function setEight() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 90, 0);
-        setClockHands(clockTwo, 0, 270);
-        setClockHands(clockThree, 0, 270);
+    function setTwo(column) {
+        setClocks(column);
+        setClockHands(clockOne, 0, 0);
+        setClockHands(clockThree, 90, 0);
+        setClockHands(clockFive, 270, 0);
 
-        setClocks(columnFour);
-        setClockHands(clockOne, 90, 180);
-        setClockHands(clockTwo, 180, 270);
-        setClockHands(clockThree, 180, 270);
+        setClockHands(clockTwo, 180, 90);
+        setClockHands(clockFour, 180, 270);
+        setClockHands(clockSix, 180, 180);
     }
 
-    function setNine() {
-        setClocks(columnThree);
-        setClockHands(clockOne, 90, 0);
-        setClockHands(clockTwo, 0, 270);
+    function setThree(column) {
+        setClocks(column);
+        setClockHands(clockOne, 0, 0);
         setClockHands(clockThree, 0, 0);
+        setClockHands(clockSix, 0, 0);
 
-        setClocks(columnFour);
-        setClockHands(clockOne, 90, 180);
-        setClockHands(clockTwo, 90, 270);
-        setClockHands(clockThree, 180, 270);
+        setClockHands(clockTwo, 180, 90);
+        setClockHands(clockFour, 180, 270);
+        setClockHands(clockSix, 180, 270);
+    }
+
+    function setFour(column) {
+        setClocks(column);
+        setClockHands(clockOne, 90, 90);
+        setClockHands(clockThree, 270, 0);
+        setClockHands(clockFive, 135, 135);
+
+        setClockHands(clockTwo, 90, 90);
+        setClockHands(clockFour, 90, 270);
+        setClockHands(clockSix, 270, 270);
+    }
+
+    function setFive(column) {
+        setClocks(column);
+        setClockHands(clockOne, 0, 90);
+        setClockHands(clockThree, 270, 0);
+        setClockHands(clockFive, 0, 0);
+
+        setClockHands(clockTwo, 180, 180);
+        setClockHands(clockFour, 90, 180);
+        setClockHands(clockSix, 180, 270);
+    }
+
+    function setSix(column) {
+        setClocks(column);
+        setClockHands(clockOne, 90, 0);
+        setClockHands(clockThree, 270, 90);
+        setClockHands(clockFive, 270, 0);
+
+        setClockHands(clockTwo, 180, 180);
+        setClockHands(clockFour, 180, 90);
+        setClockHands(clockSix, 270, 180);
+    }
+
+    function setSeven(column) {
+        setClocks(column);
+        setClockHands(clockOne, 0, 0);
+        setClockHands(clockThree, 135, 135);
+        setClockHands(clockFive, 135, 135);
+
+        setClockHands(clockTwo, 180, 90);
+        setClockHands(clockFour, 90, 270);
+        setClockHands(clockSix, 270, 270);
+    }
+
+    function setEight(column) {
+        setClocks(column);
+        setClockHands(clockOne, 90, 0);
+        setClockHands(clockThree, 0, 270);
+        setClockHands(clockFive, 0, 270);
+
+        setClockHands(clockTwo, 90, 180);
+        setClockHands(clockFour, 180, 270);
+        setClockHands(clockSix, 180, 270);
+    }
+
+    function setNine(column) {
+        setClocks(column);
+        setClockHands(clockOne, 90, 0);
+        setClockHands(clockThree, 0, 270);
+        setClockHands(clockFive, 0, 0);
+
+        setClockHands(clockTwo, 90, 180);
+        setClockHands(clockFour, 90, 270);
+        setClockHands(clockSix, 180, 270);
     }
 
     switch (hoursNow) {
         case 1:
-            setZero();
-            setOne();
+            setZero(columnOne);
+            setOne(columnTwo);
             break;
         case 2:
-            setZero();
-            setTwo();
+            setZero(columnOne);
+            setTwo(columnTwo);
             break;
         case 3:
-            setZero();
-            setThree();
+            setZero(columnOne);
+            setThree(columnTwo);
 
             break;
         case 4:
-            setZero();
-            setFour();
+            setZero(columnOne);
+            setFour(columnTwo);
             break;
         case 5:
-            setZero();
-            setFive();
+            setZero(columnOne);
+            setFive(columnTwo);
             break;
         case 6:
-            setZero();
-            setSix();
+            setZero(columnOne);
+            setSix(columnTwo);
             break;
         case 7:
-            setZero();
-            setSeven();
+            setZero(columnOne);
+            setSeven(columnTwo);
             break;
         case 8:
-            setZero();
-            setEight();
+            setZero(columnOne);
+            setEight(columnTwo);
             break;
         case 9:
-            setZero();
-            setNine();
-            setThreeMin();
-            setFiveMin();
+            setZero(columnOne);
+            setNine(columnTwo);
             break;
         case 10:
+            setOne(columnOne);
+            setZero(columnTwo);
             break;
         case 11:
+            setOne(columnOne);
+            setOne(columnTwo);
             break;
         case 12:
+            setOne(columnOne);
+            setTwo(columnTwo);
             break;
         default:
     }
