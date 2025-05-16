@@ -1,0 +1,96 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #E8E4E4;
+}
+
+
+.clock_back {
+    /* 60% of whole page screen size */
+    width: 60%;
+    
+     /* 40% of whole page screen size */
+    height: 40%;
+   
+    /* Give some space at the top */
+    margin-top: 40px;
+
+    /* Center horizontally */
+    margin-right: auto;
+    margin-left: auto;
+
+    /* Drop shadow */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+
+    /* Center children vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+}
+
+.clocks {
+     /* 80% of the clock's backboard (clock_back) */
+    width: 80%;
+
+     /* 80% of the clocks backboard (clock_back) */
+    height: 80%;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.clock_columns {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    /* Circle Dimensions */
+    width: 80px;
+    height: 80px;
+
+    /* Circle shape */
+    border-radius: 50%;
+
+    margin: auto;
+
+    /* Inner Shadow */
+    box-shadow: inset -4px 4px 8px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hour_hand {
+    width: 32px;
+    height: 10px;
+    transform-origin: 5px center;
+    background-color: black;
+    position: absolute;
+    
+    border-radius: 20px 0 0 20px;
+    left: calc(50% - 5px);
+
+    /* transform: rotate(135deg); */
+}
+
+.minute_hand {
+    width: 45px;
+    height: 10px;
+    transform-origin: 5px center;
+    background-color: black;
+    position: absolute;
+    
+    border-radius: 20px 0 0 20px;
+    left: calc(50% - 5px);
+
+    /* transform: rotate(135deg); */
+}
+
