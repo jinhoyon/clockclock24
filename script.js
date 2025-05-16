@@ -63,7 +63,7 @@ let hourHand, minuteHand;
         setClocks(column);
         setClockHands(clockOne, 0, 0);
         setClockHands(clockThree, 0, 0);
-        setClockHands(clockSix, 0, 0);
+        setClockHands(clockFive, 0, 0);
 
         setClockHands(clockTwo, 180, 90);
         setClockHands(clockFour, 180, 270);
@@ -136,8 +136,8 @@ let hourHand, minuteHand;
         setClockHands(clockSix, 180, 270);
     }
 
-    function setHours() {
-        const currentHour = new Date().getHours() % 12 || 12;
+    function setHour(currentHour) {
+        // const currentHour = new Date().getHours() % 12 || 12;
         switch (currentHour) {
             case 1:
                 setZero(columnOne);
@@ -234,7 +234,7 @@ let hourHand, minuteHand;
         const currentMinuteTensDigit = Math.floor(currentMinute / 10);
         const currentMinuteOnesDigit = currentMinute % 10;
 
-        setHours();
+        setHour(currentHour);
         setMinutes(currentMinuteTensDigit, columnThree);
         setMinutes(currentMinuteOnesDigit, columnFour);
     }
@@ -242,8 +242,8 @@ let hourHand, minuteHand;
     // Initial call
     updateTime();
 
-    // Update every second
-    setInterval(updateTime, 1000);
+    // Refresh Interval
+    setInterval(updateTime, 500);
 })();
 
 
