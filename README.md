@@ -2,7 +2,7 @@
 
 A browser-based tribute to [Human Since 1982's CC24](https://www.humanssince1982.com/the-clock-clock-24) — a kinetic art piece that displays time using a 4×6 grid of analog clock faces, where the hands rotate together to form each digit.
 
-**[Live Demo →](#)**
+**[Live Demo →](https://jinhoyon.github.io/clockclock24/)**
 
 ---
 
