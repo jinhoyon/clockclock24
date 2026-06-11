@@ -78,6 +78,24 @@ This was a deliberate exercise in pushing pure CSS further than I usually would.
 
 ---
 
+## Next steps
+
+The current version snaps hands instantly to their target angle on each tick — functional, but missing the kinetic quality that makes the real CC24 compelling. The goal is to make every digit transition a visible choreographed motion.
+
+**CSS `transition` for smooth rotation**
+The most immediate upgrade: adding `transition: transform 0.6s ease-in-out` to `.hour_hand` and `.minute_hand` so hands sweep to their new angle rather than jumping. The catch is the 0°/360° wraparound problem — a hand at 350° rotating to 10° should travel 20° forward, not 340° backward. This requires tracking the current accumulated rotation in JS and always adding or subtracting the delta rather than setting an absolute value.
+
+**Choreographed idle animation**
+The real CC24 doesn't just sit still between minutes — the hands drift, spin, and realign in decorative patterns. The plan is to define a set of "resting" configurations (all hands pointing outward, all hands at 45°, a pinwheel pattern) and interpolate through them using `setTimeout` chains between minute transitions.
+
+**Easing that feels mechanical**
+CSS `ease-in-out` reads as digital. A custom `cubic-bezier` that mimics motor acceleration — fast in the middle, slight overshoot at the end — would get closer to the physical feel of geared clock hands.
+
+**Per-hand staggered timing**
+Rather than all 24 hands moving simultaneously, offsetting each hand's transition start by ~30–50ms creates a wave effect across the grid, which is much closer to how the physical piece behaves.
+
+---
+
 ## Inspiration
 
 [Human Since 1982 — The Clock Clock 24](https://www.humanssince1982.com/the-clock-clock-24)
